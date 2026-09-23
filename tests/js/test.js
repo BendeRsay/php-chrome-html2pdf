@@ -23,9 +23,9 @@ describe('Converter', () => {
     });
 
     describe('run', () => {
-        it('returns a Uint8Array', async () => {
+        it('returns a buffer', async () => {
             const converter = new Converter('<p>Hello</p>', {});
-            chai.expect(await converter.run()).to.be.instanceof(Uint8Array);
+            chai.expect(await converter.run()).to.be.instanceof(Buffer);
         });
     });
 

@@ -1,5 +1,6 @@
 import chai from 'chai'
 import Converter from '../../lib/Converter.js';
+import {describe, it} from "mocha/mocha.mjs";
 
 describe('Converter', () => {
 
@@ -22,9 +23,9 @@ describe('Converter', () => {
     });
 
     describe('run', () => {
-        it('returns a buffer', async () => {
+        it('returns a Uint8Array', async () => {
             const converter = new Converter('<p>Hello</p>', {});
-            chai.expect(await converter.run()).to.be.instanceof(Buffer);
+            chai.expect(await converter.run()).to.be.instanceof(Uint8Array);
         });
     });
 
